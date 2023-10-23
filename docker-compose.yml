@@ -2,7 +2,7 @@ version: "3.5"
 services:
   nethermind:
     build:
-      context: .
+      context: nethermind
       args:
         UPSTREAM_VERSION: 1.21.0
     restart: unless-stopped

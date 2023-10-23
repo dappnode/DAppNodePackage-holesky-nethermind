@@ -1,24 +1,24 @@
 #!/bin/sh
 
-case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_PRATER" in
-"prysm-prater.dnp.dappnode.eth")
-  echo "Using prysm-prater.dnp.dappnode.eth"
+case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_HOLESKY" in
+"prysm-holesky.dnp.dappnode.eth")
+  echo "Using prysm-holesky.dnp.dappnode.eth"
   JWT_PATH="/security/prysm/jwtsecret.hex"
   ;;
-"lighthouse-prater.dnp.dappnode.eth")
-  echo "Using lighthouse-prater.dnp.dappnode.eth"
+"lighthouse-holesky.dnp.dappnode.eth")
+  echo "Using lighthouse-holesky.dnp.dappnode.eth"
   JWT_PATH="/security/lighthouse/jwtsecret.hex"
   ;;
-"teku-prater.dnp.dappnode.eth")
-  echo "Using teku-prater.dnp.dappnode.eth"
+"teku-holesky.dnp.dappnode.eth")
+  echo "Using teku-holesky.dnp.dappnode.eth"
   JWT_PATH="/security/teku/jwtsecret.hex"
   ;;
-"nimbus-prater.dnp.dappnode.eth")
-  echo "Using nimbus-prater.dnp.dappnode.eth"
+"nimbus-holesky.dnp.dappnode.eth")
+  echo "Using nimbus-holesky.dnp.dappnode.eth"
   JWT_PATH="/security/nimbus/jwtsecret.hex"
   ;;
-"lodestar-prater.dnp.dappnode.eth")
-  echo "Using lodestar-prater.dnp.eth"
+"lodestar-holesky.dnp.dappnode.eth")
+  echo "Using lodestar-holesky.dnp.eth"
   JWT_PATH="/security/lodestar/jwtsecret.hex"
   ;;
 *)
@@ -31,10 +31,8 @@ esac
 JWT=$(cat $JWT_PATH)
 curl -X POST "http://my.dappnode/data-send?key=jwt&data=${JWT}"
 
-exec /nethermind/nethermind --config goerli \
-  --JsonRpc.Enabled=true \
+exec /nethermind/nethermind --config holesky \
   --JsonRpc.JwtSecretFile=${JWT_PATH} \
-  --Init.WebSocketsEnabled true \
   --JsonRpc.WebSocketsPort 8546 \
   --HealthChecks.Enabled true \
   --Init.BaseDbPath=/data \

@@ -5,29 +5,27 @@ services:
       context: .
       args:
         UPSTREAM_VERSION: 1.21.0
-    image: "nethermind.goerli-nethermind.dnp.dappnode.eth:1.0.9"
     restart: unless-stopped
     security_opt:
       - "seccomp:unconfined"
     volumes:
       - "data:/data"
     environment:
-      MODE: normal
       NETHERMIND_SYNCCONFIG_FASTSYNC: "true"
       NETHERMIND_SYNCCONFIG_SNAPSYNC: ""
       NETHERMIND_JSONRPCCONFIG_ENABLED: "true"
       NETHERMIND_JSONRPCCONFIG_HOST: 0.0.0.0
       NETHERMIND_INITCONFIG_WEBSOCKETSENABLED: "true"
-      NETHERMIND_NETWORKCONFIG_DISCOVERYPORT: 30804
-      NETHERMIND_NETWORKCONFIG_P2PPORT: 30804
+      NETHERMIND_NETWORKCONFIG_DISCOVERYPORT: 31804
+      NETHERMIND_NETWORKCONFIG_P2PPORT: 31804
       NETHERMIND_JSONRPCCONFIG_ENGINEHOST: 0.0.0.0
       NETHERMIND_JSONRPCCONFIG_ENGINEPORT: 8551
       NETHERMIND_HEALTHCHECKSCONFIG_UIENABLED: "true"
       LOG: INFO
       EXTRA_OPTS: ""
     ports:
-      - "30804:30804/udp"
-      - "30804:30804/tcp"
+      - "31804:31804/udp"
+      - "31804:31804/tcp"
     ulimits:
       nofile:
         soft: 1000000

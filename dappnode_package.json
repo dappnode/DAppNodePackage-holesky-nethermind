@@ -1,28 +1,23 @@
 {
-  "name": "goerli-nethermind.dnp.dappnode.eth",
-  "version": "1.0.18",
+  "name": "holesky-nethermind.dnp.dappnode.eth",
+  "version": "0.1.0",
   "upstreamVersion": "1.21.0",
-  "shortDescription": "Nethermind Goerli Ethereum client",
+  "shortDescription": "Nethermind Holesky Ethereum client",
   "description": "Nethermind - The world’s fastest Ethereum .NET Client and P2P Data Marketplace for the decentralised future\nOur flagship .NET Core-based Ethereum client is all about performance and flexibility. We have built a lean, stable and feature-rich gateway to allow anyone, anywhere, to take part in the decentralised future.",
   "type": "service",
   "architectures": ["linux/amd64", "linux/arm64"],
-  "dependencies": {},
   "chain": "ethereum",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
-  "contributors": [
-    "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
-    "Tropicar <tropicar@dappnode.io> (https://github.com/tropicar)"
-  ],
   "exposable": [
     {
-      "name": "Nethermind Goerli JSON RPC",
-      "description": "JSON RPC endpoint for Nethermind Ethereum Testnet Goerli",
+      "name": "Nethermind Holesky JSON RPC",
+      "description": "JSON RPC endpoint for Nethermind Ethereum Testnet Holesky",
       "serviceName": "nethermind",
       "port": 8545
     },
     {
-      "name": "Nethermind Goerli JSON RPC (WS)",
-      "description": "JSON RPC WebSocket endpoint for Nethermind Ethereum Testnet Goerli",
+      "name": "Nethermind Holesky JSON RPC (WS)",
+      "description": "JSON RPC WebSocket endpoint for Nethermind Ethereum Testnet Holesky",
       "serviceName": "nethermind",
       "port": 8546
     }
@@ -31,25 +26,25 @@
   "upstreamArg": "UPSTREAM_VERSION",
   "categories": ["Blockchain"],
   "links": {
-    "ui": "http://goerli-nethermind.dappnode:8551/healthchecks-ui",
-    "endpoint": "http://goerli-nethermind.dappnode:8545",
-    "engineAPI": "http://goerli-nethermind.dappnode:8551",
-    "homepage": "https://github.com/dappnode/DAppNodePackage-goerli-nethermind#readme"
+    "ui": "http://holesky-nethermind.dappnode:8551/healthchecks-ui",
+    "endpoint": "http://holesky-nethermind.dappnode:8545",
+    "engineAPI": "http://holesky-nethermind.dappnode:8551",
+    "homepage": "https://github.com/dappnode/DAppNodePackage-holesky-nethermind#readme"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dappnode/DAppNodePackage-Goerli-Nethermind.git"
+    "url": "https://github.com/dappnode/DAppNodePackage-holesky-Nethermind.git"
   },
   "requirements": {
-    "minimumDappnodeVersion": "0.2.64"
+    "minimumDappnodeVersion": "0.2.82"
   },
   "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-Goerli-Nethermind/issues"
+    "url": "https://github.com/dappnode/DAppNodePackage-holesky-Nethermind/issues"
   },
   "license": "LGPL-3.0",
   "globalEnvs": [
     {
-      "envs": ["CONSENSUS_CLIENT_PRATER"],
+      "envs": ["CONSENSUS_CLIENT_HOLESKY"],
       "services": ["nethermind"]
     }
   ]

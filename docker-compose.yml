@@ -11,8 +11,8 @@ services:
     volumes:
       - "data:/data"
     environment:
-      NETHERMIND_SYNCCONFIG_FASTSYNC: "true"
-      NETHERMIND_SYNCCONFIG_SNAPSYNC: ""
+      NETHERMIND_SYNCCONFIG_FASTSYNC: ""
+      NETHERMIND_SYNCCONFIG_SNAPSYNC: "true"
       NETHERMIND_JSONRPCCONFIG_ENABLED: "true"
       NETHERMIND_JSONRPCCONFIG_HOST: 0.0.0.0
       NETHERMIND_INITCONFIG_WEBSOCKETSENABLED: "true"
@@ -34,5 +34,6 @@ services:
       resources:
         limits:
           memory: 16384M
+    image: "nethermind.holesky-nethermind.dnp.dappnode.eth:0.1.0"
 volumes:
   data: {}

@@ -4,7 +4,7 @@ services:
     build:
       context: nethermind
       args:
-        UPSTREAM_VERSION: 1.25.2
+        UPSTREAM_VERSION: 1.26.0-exp.2
     restart: unless-stopped
     security_opt:
       - "seccomp:unconfined"
